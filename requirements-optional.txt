@@ -1,0 +1,15 @@
+# Optional LLM Provider Dependencies
+# Install only the providers you need
+
+# Ollama (local models)
+langchain-ollama
+
+# Anthropic Claude
+langchain-anthropic
+
+# Google Generative AI
+langchain-google-genai
+
+# Machine Learning (H2O, MLflow)
+h2o
+mlflow

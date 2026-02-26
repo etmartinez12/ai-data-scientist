@@ -1,0 +1,119 @@
+# AI Data Science Team - LLM Provider Configuration
+# This file provides examples for configuring different LLM providers
+# Environment variables take precedence over this file
+
+# Default LLM configuration
+llm:
+  provider: openai
+  model: gpt-4o-mini
+  temperature: 0.7
+  # max_tokens: 4096  # Optional
+
+# Example configurations for different providers:
+
+# --- OpenAI ---
+# llm:
+#   provider: openai
+#   model: gpt-4o-mini  # or gpt-4o, gpt-4-turbo, gpt-3.5-turbo
+#   api_key: ${OPENAI_API_KEY}  # Read from environment variable
+#   temperature: 0.7
+#   max_tokens: 4096
+
+# --- Ollama (Local Models) ---
+# llm:
+#   provider: ollama
+#   model: llama2  # or llama3, mistral, mixtral, phi, codellama, deepseek-coder
+#   base_url: http://localhost:11434
+#   temperature: 0.7
+
+# --- Anthropic Claude ---
+# llm:
+#   provider: anthropic
+#   model: claude-3-5-sonnet-20241022  # or claude-3-opus-20240229, claude-3-sonnet-20240229
+#   api_key: ${ANTHROPIC_API_KEY}
+#   temperature: 0.7
+#   max_tokens: 4096
+
+# --- Azure OpenAI ---
+# llm:
+#   provider: azure
+#   model: gpt-4o-mini
+#   api_key: ${AZURE_OPENAI_API_KEY}
+#   azure_endpoint: ${AZURE_OPENAI_ENDPOINT}
+#   api_version: "2024-02-15-preview"
+#   temperature: 0.7
+#   max_tokens: 4096
+
+# --- Google Generative AI ---
+# llm:
+#   provider: google
+#   model: gemini-pro  # or gemini-pro-vision
+#   api_key: ${GOOGLE_API_KEY}
+#   temperature: 0.7
+
+# --- Custom Endpoint (OpenAI-compatible) ---
+# Use this for self-hosted LLMs (vLLM, text-generation-inference, LiteLLM, etc.)
+# llm:
+#   provider: custom
+#   model: your-model-name
+#   base_url: https://api.internal.com/v1
+#   api_key: your-api-key  # or "not-needed" if no auth
+#   temperature: 0.7
+#   max_tokens: 4096
+
+# Provider-specific model lists
+providers:
+  openai:
+    models:
+      - gpt-4o
+      - gpt-4o-mini
+      - gpt-4-turbo
+      - gpt-4-turbo-preview
+      - gpt-3.5-turbo
+      - gpt-3.5-turbo-16k
+    requires_api_key: true
+    api_key_env: OPENAI_API_KEY
+
+  ollama:
+    models:
+      - llama2
+      - llama3
+      - llama3:70b
+      - mistral
+      - mixtral
+      - mixtral:8x7b
+      - phi
+      - phi3
+      - codellama
+      - deepseek-coder
+      - deepseek-coder:6.7b
+    requires_api_key: false
+    default_base_url: http://localhost:11434
+
+  anthropic:
+    models:
+      - claude-3-5-sonnet-20241022
+      - claude-3-opus-20240229
+      - claude-3-sonnet-20240229
+      - claude-3-haiku-20240307
+    requires_api_key: true
+    api_key_env: ANTHROPIC_API_KEY
+
+  azure:
+    models:
+      - gpt-4o
+      - gpt-4o-mini
+      - gpt-4-turbo
+      - gpt-3.5-turbo
+    requires_api_key: true
+    requires_endpoint: true
+    api_key_env: AZURE_OPENAI_API_KEY
+    endpoint_env: AZURE_OPENAI_ENDPOINT
+
+  google:
+    models:
+      - gemini-pro
+      - gemini-pro-vision
+      - gemini-1.5-pro
+    requires_api_key: true
+    api_key_env: GOOGLE_API_KEY

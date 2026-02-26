@@ -1,0 +1,36 @@
+# Core dependencies
+langchain
+langchain_community
+langchain_experimental
+langgraph >= 0.2.74
+pandas
+numpy
+sqlalchemy
+
+# Configuration management
+python-dotenv
+pyyaml
+
+# LLM Providers (at least one required)
+langchain_openai
+openai
+
+# Data handling
+openpyxl
+
+# Visualization
+plotly
+
+# UI
+streamlit
+
+# Machine Learning
+scikit-learn
+xgboost
+psutil
+
+# Data Science Tools
+missingno
+sweetviz
+pytimetk
+dtale
