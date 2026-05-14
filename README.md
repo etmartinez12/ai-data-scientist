@@ -2,9 +2,7 @@
   <h1>AI Data Science Team</h1>
   <em>AI-powered data science agents for automated data analysis and machine learning</em>
 </div>
-<div align="center">
-  <img src="https://img.shields.io/badge/status-beta-orange?style=for-the-badge" alt="Status: Beta">
-</div>
+
 
 # AI Data Science Team
 
